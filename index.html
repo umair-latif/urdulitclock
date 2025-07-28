@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Urdu Literary Clock</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-default">
+
+<div class="clock">
+  <div class="time" id="time">--:--</div>
+  <div class="urdu" id="urdu-quote">Loading...</div>
+  <div class="roman" id="roman-quote"></div>
+</div>
+
+<div class="menu theme-default" id="menu">
+  <a href="https://github.com/yourproject" target="_blank" class="menu-link">🌐GitHub</a>
+  <div>A project by <a href="https://brainmasala.info">Brain Masala</a> and <a href="https://umairmalik.com/">پانچواں درویش</a></div>
+  <div class="menu-right">
+    <select id="color-theme">
+      <option value="default">B&W سیاہ و سفید</option>
+      <option value="blue">Ocean نیلگوں</option>
+      <option value="maroon">Rose گلابی</option>
+      <option value="green">Emerald زمرد</option>
+    </select>
+    <button id="toggle-theme">🌙 اندھیرا</button>
+    <button id="toggle-roman">Hide Roman</button>
+    <select id="time-format">
+      <option value="24H">24 گھنٹے</option>
+      <option value="12H">12 گھنٹے</option>
+    </select>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
