@@ -3,6 +3,12 @@ Urdu Literary Clock is a web-based clock that displays time alongside beautifull
 It supports multiple color themes, dark/light mode, Roman Urdu toggle, and highlighted text for important phrases.
 The quotes are dynamically loaded from quotes.json and fallbacks.json, making it easy to update the content without changing the code.
 
+The quotes featured in this clock have been painstakingly curated by hand.
+I personally searched through digitized Urdu books, literary archives, and online resources to collect authentic prose and poetry.
+
+Each quote is carefully matched to every quarter-hour of the day (96 time slots), resulting in a unique experience every time you check the clock.
+This makes the project not just a clock, but a living anthology of Urdu literature.
+
 🌐 Live Demo
 Live Demo on Netlify 
 
@@ -29,30 +35,34 @@ Perfect for literature lovers who appreciate an elegant reading experience with 
 ---
 
 ## 📂 Project Structure
+ ```
 literary-clock/
-├── index.html # Main HTML
-├── styles.css # Styles with themes
-├── app.js # JavaScript logic
-├── quotes.json # Urdu literary quotes
-├── fallbacks.json # Fallback quotes
-└── fonts/ # Custom fonts (.ttf)
-
-🎨 Customization
+├── index.html        # Main HTML file
+├── styles.css        # Styles (themes, fonts, layout)
+├── app.js            # JavaScript logic
+├── quotes.json       # Urdu literary quotes
+├── fallbacks.json    # Fallback quotes
+└── fonts/            # Custom fonts (.ttf)
+    ├── NotoNastaliqUrdu-Regular.ttf
+    └── Merriweather-Regular.ttf
+ ```
+## 🎨 Customization
 Themes can be modified in styles.css
 
 Fonts can be replaced by adding .ttf files in fonts/ and updating CSS.
 
 Quotes can be updated by editing quotes.json.
 
-🛠️ Technologies Used
+## 🛠️ Technologies Used
 HTML5 / CSS3 / Vanilla JavaScript
 
 Custom Web Fonts (Noto Nastaliq Urdu)
 
 JSON for data storage
 
-Each entry in quotes.json follows this format:
-  {
+### Each entry in quotes.json follows this format:
+  ```json
+{
     "hour": 10,
     "slot": 3.1,
     "type": "prose",
@@ -64,19 +74,19 @@ Each entry in quotes.json follows this format:
     "book_urdu": "میں ایک میاں ہوں",
     "highlight": "پونے گیارہ بجے"
   }
-
-  hour= 0-23
-  slot= 0-3 (for each quarter) with multiple entries numbered with a ".", for example: 3.1, 3.2, 3.3 .... one of these three would be picked randomly for this slot.
-  urdu= (ل) or \n → renders as a line break in Urdu and Roman text
-  highlight= the text to be highlighted in the quote. 
+```
+- hour= 0-23
+- slot= 0-3 (for each quarter) with multiple entries numbered with a ".", for example: 3.1, 3.2, 3.3 .... one of these three would be picked randomly for this slot.
+- urdu= (ل) or \n → renders as a line break in Urdu and Roman text
+- highlight= the text to be highlighted in the quote. 
   
 
-  the rest of the fields are self-explanatory.
+- the rest of the fields are self-explanatory.
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License.
 Feel free to fork and improve!
 
-💡 Contribute
+## 💡 Contribute
 Pull requests are welcome!
 If you’d like to add more literary quotes or features, feel free to open an issue or PR.
