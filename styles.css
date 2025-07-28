@@ -56,14 +56,14 @@ body.theme-green.dark { background: #0c2b1f; color: #ccffee; }
 
 /* === Time Display === */
 .time {
-  font-size: 4em;
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
 /* === Urdu Quotes === */
 .urdu {
-  font-size: 2.5em;   /* Bigger */
+  font-size: 2.5rem;   /* Bigger */
   line-height: 2.3;     /* Comfortable spacing */
   font-family: 'Noto Nastaliq Urdu', serif;
   direction: rtl;
@@ -73,7 +73,7 @@ body.theme-green.dark { background: #0c2b1f; color: #ccffee; }
 
 /* === Roman Transliteration === */
 .roman {
-  font-size: 1.7em;   /* Bigger than before */
+  font-size: 1.7rem;   /* Bigger than before */
   font-style: italic;
   margin-top: 20px;
   line-height: 1.8;
