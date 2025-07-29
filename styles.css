@@ -55,45 +55,40 @@ body.theme-green.dark { background: #0c2b1f; color: #ccffee; }
 }
 
 /* === Time Display === */
+./* Time display scales with screen width */
 .time {
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4.5rem);  /* min 2rem, scales with viewport width, max 4.5rem */
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 3vh;
 }
 
-/* === Urdu Quotes === */
+/* Urdu quotes (big, readable, responsive) */
 .urdu {
-  font-size: 2.5rem;   /* Bigger */
-  line-height: 2.3;     /* Comfortable spacing */
+  font-size: clamp(1.5rem, 5vw, 3.5rem); /* adjusts for small and large screens */
+  line-height: 1.9;
   font-family: 'Noto Nastaliq Urdu', serif;
   direction: rtl;
   color: inherit;
   word-break: break-word;
+  padding: 0 4vw;  /* some horizontal padding on mobile */
 }
 
-/* === Roman Transliteration === */
+/* Roman transliteration */
 .roman {
-  font-size: 1.7rem;   /* Bigger than before */
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
   font-style: italic;
-  margin-top: 20px;
+  margin-top: 2vh;
   line-height: 1.8;
   color: inherit;
+  padding: 0 4vw;
 }
 
-/* === Highlighted Text === */
-.highlighted {
-  font-weight: bold;
-  color: #111;              /* Darker than normal text */
-}
-body.dark .highlighted {
-  color: #f9f9f9;           /* Brighter highlight on dark mode */
-}
-
-/* === Metadata (Source & Book Info) === */
+/* Metadata (source, book) - bigger for readability */
 .meta-info {
-  margin-top: 15px;
-  font-size: 2em;  /* Larger metadata */
+  margin-top: 2vh;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
   opacity: 0.9;
+  padding: 0 4vw;
 }
 
 /* === RTL Urdu Font === */
@@ -103,36 +98,53 @@ body.dark .highlighted {
 }
 
 /* === Menu Bar with RTL === */
+/* Base menu styles */
 .menu {
   font-family: 'Noto Naskh Arabic', serif;
   position: fixed;
-  bottom: 0; 
+  bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 8px 15px;
   transition: background 0.3s;
 }
 
-/* Menu-right items spaced with right margin */
 .menu-right {
   display: flex;
   flex-direction: row-reverse;
-  gap: 10px;
-  margin-right: 45px; /* added margin */
+  gap: 8px;
+  margin-right: 10px;
 }
 
-/* GitHub link stays to the far left */
 .menu-link {
   font-weight: bold;
   text-decoration: none;
-  margin-left: 10px;
+  margin-left: 5px;
   color: inherit;
 }
 
-.menu button, .menu select {
-  padding: 5px 10px;
+.menu button, 
+.menu select {
+  padding: 4px 8px;
   border: none;
   border-radius: 4px;
+  font-size: 0.9rem; /* slightly smaller by default */
+}
+
+/* ✅ Mobile-specific adjustments */
+@media (max-width: 600px) {
+  .menu {
+    padding: 5px 10px;
+  }
+  .menu button, 
+  .menu select {
+    font-size: 0.75rem;  /* make text smaller */
+    padding: 3px 6px;    /* reduce button size */
+  }
+  .menu-right {
+    gap: 5px;
+    margin-right: 5px;
+  }
 }
