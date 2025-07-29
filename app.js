@@ -219,7 +219,8 @@ function updateClock() {
   
   // ✅ Adjust font size dynamically to fit screen
 	const quoteContainer = document.querySelector(".quote-container");
-	adjustFontSize(quoteContainer, urduEl, romanEl);
+//const metaDiv = document.querySelector(".meta-info");
+adjustFontSize(quoteContainer, urduEl, romanEl, metaDiv);
 }
 
 // ---- EVENT LISTENERS ----
@@ -252,23 +253,25 @@ colorThemeSelect.addEventListener("change", (e) => {
   localStorage.setItem("colorTheme", colorTheme);
 });
 
-function adjustFontSize(container, urduEl, romanEl) {
-  // Reset sizes first
+function adjustFontSize(quoteContainer, urduEl, romanEl, metaEl) {
+  // Reset text sizes
   urduEl.style.fontSize = "";
   romanEl.style.fontSize = "";
 
-  const maxHeight = container.clientHeight;
+  // Calculate available height (exclude meta)
+  const availableHeight = quoteContainer.clientHeight - (metaEl?.offsetHeight || 0);
   let scale = 1.0;
-  let urduSize = parseFloat(getComputedStyle(urduEl).fontSize);
-  let romanSize = parseFloat(getComputedStyle(romanEl).fontSize);
+  const baseUrdu = parseFloat(getComputedStyle(urduEl).fontSize);
+  const baseRoman = parseFloat(getComputedStyle(romanEl).fontSize);
 
-  // Reduce size until it fits completely
-  while (container.scrollHeight > maxHeight && scale > 0.4) {
+  // Reduce font size until text fits the available space
+  while (quoteContainer.scrollHeight > availableHeight && scale > 0.8) {
     scale -= 0.05;
-    urduEl.style.fontSize = urduSize * scale + "px";
-    romanEl.style.fontSize = romanSize * scale + "px";
+    urduEl.style.fontSize = (baseUrdu * scale) + "px";
+    romanEl.style.fontSize = (baseRoman * scale) + "px";
   }
 }
+
 
 
 
