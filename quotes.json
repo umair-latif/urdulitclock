@@ -648,6 +648,18 @@
     "highlight": "علی الصبح"
   },
   {
+    "hour": 6,
+    "slot": 3.1,
+    "type": "prose",
+    "urdu": "اگلے دن کوئی پونے سات بجے ہوں گے۔ حجۃالاسلام پالکی میں سے اترتے ہی تھے کہ شارپ صاحب ہوا خوری سے واپس آئے۔ دونوں نے ایک دوسرے کو اٹکل سے جان لیا۔",
+    "transliteration": "",
+    "source": "Deputy Nazir Ahmed",
+    "source_urdu": "ڈپٹی نذیر احمد",
+    "book": "Ibn-ul-Waqt",
+    "book_urdu": "ابن الوقت",
+    "highlight": "پونے سات بجے"
+  },
+  {
     "hour": 7,
     "slot": 0,
     "type": "prose",
@@ -981,6 +993,18 @@
     "source_urdu": "مرزا عظیم بیگ چغتائی",
     "book": "Wakalat",
     "book_urdu": "وکالت",
+    "highlight": "ساڑھے دس بجے"
+  },
+  {
+    "hour": 10,
+    "slot": 2.1,
+    "type": "prose",
+    "urdu": "ان شاءاللہ اتوار کو دس بجے ساڑھے دس بجے میں خود آئوں گا۔ اگر کوئی وجہ مانع نہ ہو، ذرہ اپنے داروغہ کو کل بعد مغرب میرے پاس بھیجھنا۔",
+    "transliteration": "",
+    "source": "Deputy Nazir Ahmed",
+    "source_urdu": "ڈپٹی نذیر احمد",
+    "book": "Ibn-ul-Waqt",
+    "book_urdu": "ابن الوقت",
     "highlight": "ساڑھے دس بجے"
   },
   {
@@ -1813,6 +1837,18 @@
     "book": "Bifocal Club",
     "book_urdu": "بائی فوکل کلب",
     "highlight": "رات کے دس بجے"
+  },
+  {
+    "hour": 22,
+    "slot": 0.2,
+    "type": "prose",
+    "urdu": "دس بجے کھانا کھاتے ہیں، اس وقت تک اخبار یا کتاب پڑھتے رہتے ہیں۔ کھانے کے بعد آدھا گھنٹا انٹا کھیلتے ہیں، پھر چائے پی کر سونے کے کمرے میں چلے جاتے ہیں۔",
+    "transliteration": "Aur jab hum chorī kī chaunī se bā’iscope dekh kar rāt ke das bajé panjoñ ke bal ghar mein dākhil hoté to ḍevṛhī mein humeñ ḳhāndān ke tamām buzurg na sirf ḳhud Guard of Honour deté.",
+    "source": "Deputy Nazir Ahmed",
+    "source_urdu": "ڈپٹی نذیر احمد",
+    "book": "Ibn-ul-Waqt",
+    "book_urdu": "ابن الوقت",
+    "highlight": "دس بجے"
   },
    {
     "hour": 22,
