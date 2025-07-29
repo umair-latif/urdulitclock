@@ -101,6 +101,7 @@ body.theme-green.dark { background: #0c2b1f; color: #ccffee; }
 /* Base menu styles */
 .menu {
   font-family: 'Noto Naskh Arabic', serif;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
   position: fixed;
   bottom: 0;
   width: 100%;
