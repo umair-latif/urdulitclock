@@ -65,12 +65,12 @@ body.theme-green.dark { background: #0c2b1f; color: #ccffee; }
 /* Urdu quotes (big, readable, responsive) */
 .urdu {
   font-size: clamp(1.5rem, 5vw, 3.5rem); /* adjusts for small and large screens */
-  line-height: 1.9;
+  line-height: 2.3;
   font-family: 'Noto Nastaliq Urdu', serif;
   direction: rtl;
   color: inherit;
   word-break: break-word;
-  padding: 0 4vw;  /* some horizontal padding on mobile */
+  padding: 0 3vw;  /* some horizontal padding on mobile */
 }
 
 /* Roman transliteration */
