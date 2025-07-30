@@ -1378,18 +1378,6 @@
   },
   {
     "hour": 15,
-    "slot": 2,
-    "type": "prose",
-    "urdu": "اس وقت تین بج کر پینتیس منٹ آئے ہیں۔ بس میں بھی ٹہلتا ٹہلتا پندرہ بیس منٹ میں وہیں پہنچ جاؤں گا، اور پھر ہم تم پروگرام بنائیں گے۔ واللہ سچ ہے دل سے دل کو راہ ہوتی ہے۔",
-    "transliteration": "Is waqt teen baj kar paintis minute aaye hain. Bas main bhi tehalta tehalta pandrah bees minute mein wahiin pohnch jaoonga, aur phir hum tum program banayenge. Wallah sach hai dil se dil ko raah hoti hai.",
-    "source": "Ghulam Abbas",
-    "source_urdu": "غلام عباس",
-    "book": "Mukerjee Babu ki Diary",
-    "book_urdu": "مکرجی بابو کی ڈائری",
-    "highlight": "تین بج کر"
-  },
-  {
-    "hour": 15,
     "slot": 2.1,
     "type": "prose",
     "urdu": "تین بجے کے قریب ان پر مایوسی چھانے لگی اور ساڑھے تین بجے جمال کرسی میں بیٹھا بیٹھا سو گیا۔ لیکن ایلی چپ چاپ سفید منزل کی طرف ٹکٹکی باندھے بیٹھا رہا۔",
@@ -1405,12 +1393,24 @@
     "slot": 2.2,
     "type": "prose",
     "urdu": "بلجین نے اپنی گھڑی نکال کر دیکھی اور بولا: \"ساڑھے تین بجے ہیں۔\" بدمعاش کہیں کا۔ جان کر اس نے وقت بتایا تھا۔ ٹام اچھل پڑا۔ اب تک ہم نے سوچا نہیں تھا کہ وقت گزرا جا رہا ہے۔",
-    "transliteration": "Biljin ne apnī ghaṛī nikāl kar dekhī aur bolā: 'Sāṛhe tīn bajé haiñ.' Badmāsh kahīñ kā. Jān kar us ne waqt batāyā thā. Ṭām uchhal paṛā. Ab tak ham ne sochā nahīñ thā ke waqt guzrā jā rahā hai.",
+    "transliteration": "Belgian ne apnī ghaṛī nikāl kar dekhī aur bolā: 'Sāṛhe tīn bajé haiñ.' Badmāsh kahīñ kā. Jān kar us ne waqt batāyā thā. Ṭām uchhal paṛā. Ab tak ham ne sochā nahīñ thā ke waqt guzrā jā rahā hai.",
     "source": "Shahid Ahmad Dehlvi (Translation)",
     "source_urdu": "شاہد احمد دہلوی (ترجمہ)",
     "book": "Deewar (Jean-Paul Sartre)",
     "book_urdu": "دیوار از ژاں پال سارتر",
     "highlight": "ساڑھے تین بجے"
+  },
+  {
+    "hour": 15,
+    "slot": 2,
+    "type": "prose",
+    "urdu": "اس وقت تین بج کر پینتیس منٹ آئے ہیں۔ بس میں بھی ٹہلتا ٹہلتا پندرہ بیس منٹ میں وہیں پہنچ جاؤں گا، اور پھر ہم تم پروگرام بنائیں گے۔ واللہ سچ ہے دل سے دل کو راہ ہوتی ہے۔",
+    "transliteration": "Is waqt teen baj kar paintis minute aaye hain. Bas main bhi tehalta tehalta pandrah bees minute mein wahiin pohnch jaoonga, aur phir hum tum program banayenge. Wallah sach hai dil se dil ko raah hoti hai.",
+    "source": "Ghulam Abbas",
+    "source_urdu": "غلام عباس",
+    "book": "Mukerjee Babu ki Diary",
+    "book_urdu": "مکرجی بابو کی ڈائری",
+    "highlight": "تین بج کر"
   },
   {
     "hour": 15,
