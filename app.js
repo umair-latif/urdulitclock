@@ -173,7 +173,8 @@ function findQuote(hour, slot) {
 
 // ---- HIGHLIGHT FUNCTION ----
 function highlightText(text, highlight) {
-  if (!highlight || !text) return text;
+  if (!text) return "";          // gracefully handle missing fields
+  if (!highlight) return text;
   const regex = new RegExp(`(${highlight})`, "gi");
   return text.replace(regex, `<span class="highlighted">$1</span>`);
 }
@@ -190,7 +191,7 @@ function updateClock() {
 
   // Highlight fields
   const urduHighlighted = highlightText(quote.urdu, quote.highlight).replace(/\(ل\)/g, "<br>");
-  const romanHighlighted = highlightText(quote.transliteration, quote.highlight).replace(/\(ل\)/g, "<br>");
+  const romanHighlighted = highlightText(quote.transliteration || "", quote.highlight).replace(/\(ل\)/g, "<br>");
 
   // Render text
   // Replace (ل) with <br> before splitting lines
