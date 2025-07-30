@@ -148,6 +148,7 @@ body.dark .menu {
 .color-circle.theme-maroon { background: #b03060; }
 .color-circle.theme-green { background: #1e8f5a; }
 .color-circle.selected {
+
   border-color: #222; /* visible on light menu */
 }
 body.dark .color-circle.selected {
