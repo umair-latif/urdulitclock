@@ -165,12 +165,14 @@ body.dark .menu button.theme-toggle {
 }
 
 
-/* Menu links */
-.menu a {
+/* Menu and footer links */
+.menu a,
+.footer a {
   color: inherit;
   text-decoration: underline;
 }
-.menu a:visited {
+.menu a:visited,
+.footer a:visited {
   color: inherit;
 }
 
