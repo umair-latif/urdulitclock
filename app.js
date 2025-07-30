@@ -113,7 +113,7 @@ const menuEl = document.getElementById("menu");
 const themeBtn = document.getElementById("toggle-theme");
 const romanBtn = document.getElementById("toggle-roman");
 const timeSelect = document.getElementById("time-format");
-const colorThemeSelect = document.getElementById("color-theme");
+const colorCircles = document.querySelectorAll(".color-circle");
 
 // ---- APPLY SAVED SETTINGS ----
 document.body.classList.add(`theme-${colorTheme}`);
@@ -124,7 +124,8 @@ themeBtn.textContent = darkMode ? "☀️ اجالا" : "🌙 اندھیرا";
 romanBtn.textContent = showRoman ? "Hide Roman Urdu" : "Show Roman Urdu";
 romanEl.style.display = showRoman ? "block" : "none";
 timeSelect.value = timeFormat;
-colorThemeSelect.value = colorTheme;
+const selectedCircle = document.querySelector(`.color-circle[data-theme="${colorTheme}"]`);
+if (selectedCircle) selectedCircle.classList.add("selected");
 
 // ---- FUNCTIONS ----
 function updateThemeColors() {
@@ -253,14 +254,22 @@ window.addEventListener("resize", () => {
   adjustFontSize(quoteContainer, urduEl, romanEl, metaDiv);
 });
 
-// ---- COLOR THEME DROPDOWN ----
-colorThemeSelect.addEventListener("change", (e) => {
+// ---- COLOR THEME CIRCLES ----
+function applyColorTheme(theme) {
   document.body.classList.remove(`theme-${colorTheme}`);
   menuEl.classList.remove(`theme-${colorTheme}`);
-  colorTheme = e.target.value;
+  colorTheme = theme;
   document.body.classList.add(`theme-${colorTheme}`);
   menuEl.classList.add(`theme-${colorTheme}`);
   localStorage.setItem("colorTheme", colorTheme);
+}
+
+colorCircles.forEach((circle) => {
+  circle.addEventListener("click", () => {
+    colorCircles.forEach((c) => c.classList.remove("selected"));
+    circle.classList.add("selected");
+    applyColorTheme(circle.dataset.theme);
+  });
 });
 
 function adjustFontSize(quoteContainer, urduEl, romanEl, metaEl) {
