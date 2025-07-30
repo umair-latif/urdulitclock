@@ -216,10 +216,18 @@ body.dark .menu button.theme-toggle {
   border-color: #fff;
 }
 
+/* Menu links */
+.menu a {
+  color: inherit;
+  text-decoration: underline;
+}
+.menu a:visited {
+  color: inherit;
+}
+
 /* GitHub link minimal */
 .menu-link {
   font-weight: bold;
-  text-decoration: none;
   font-size: 0.85rem;
   opacity: 0.85;
   transition: opacity 0.3s;
