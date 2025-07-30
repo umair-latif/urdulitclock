@@ -120,7 +120,7 @@ document.body.classList.add(`theme-${colorTheme}`);
 menuEl.classList.add(`theme-${colorTheme}`);
 document.body.classList.toggle("dark", darkMode);
 menuEl.classList.toggle("dark", darkMode);
-themeBtn.textContent = darkMode ? "☀️ اجالا" : "🌙 اندھیرا";
+themeBtn.textContent = darkMode ? "☀️" : "🌙";
 romanBtn.textContent = showRoman ? "Hide Roman Urdu" : "Show Roman Urdu";
 romanEl.style.display = showRoman ? "block" : "none";
 timeSelect.value = timeFormat;
@@ -229,7 +229,7 @@ themeBtn.addEventListener("click", () => {
   darkMode = !darkMode;
   localStorage.setItem("darkMode", darkMode);
   updateThemeColors();
-  themeBtn.textContent = darkMode ? "☀️ اجالا" : "🌙 اندھیرا";
+  themeBtn.textContent = darkMode ? "☀️" : "🌙";
 });
 
 romanBtn.onclick = () => {
