@@ -110,6 +110,7 @@ const timeEl = document.getElementById("time");
 const urduEl = document.getElementById("urdu-quote");
 const romanEl = document.getElementById("roman-quote");
 const menuEl = document.getElementById("menu");
+const footerEl = document.getElementById("footer");
 const themeBtn = document.getElementById("toggle-theme");
 const romanBtn = document.getElementById("toggle-roman");
 const timeBtn = document.getElementById("toggle-time-format");
@@ -118,8 +119,10 @@ const colorCircles = document.querySelectorAll(".color-circle");
 // ---- APPLY SAVED SETTINGS ----
 document.body.classList.add(`theme-${colorTheme}`);
 menuEl.classList.add(`theme-${colorTheme}`);
+footerEl.classList.add(`theme-${colorTheme}`);
 document.body.classList.toggle("dark", darkMode);
 menuEl.classList.toggle("dark", darkMode);
+footerEl.classList.toggle("dark", darkMode);
 themeBtn.textContent = darkMode ? "☀️" : "🌙";
 romanBtn.textContent = showRoman ? "Hide Roman Urdu" : "Show Roman Urdu";
 romanEl.style.display = showRoman ? "block" : "none";
@@ -131,6 +134,7 @@ if (selectedCircle) selectedCircle.classList.add("selected");
 function updateThemeColors() {
   document.body.classList.toggle("dark", darkMode);
   menuEl.classList.toggle("dark", darkMode);
+  footerEl.classList.toggle("dark", darkMode);
 }
 
 function getCurrentDate() {
@@ -261,9 +265,11 @@ window.addEventListener("resize", () => {
 function applyColorTheme(theme) {
   document.body.classList.remove(`theme-${colorTheme}`);
   menuEl.classList.remove(`theme-${colorTheme}`);
+  footerEl.classList.remove(`theme-${colorTheme}`);
   colorTheme = theme;
   document.body.classList.add(`theme-${colorTheme}`);
   menuEl.classList.add(`theme-${colorTheme}`);
+  footerEl.classList.add(`theme-${colorTheme}`);
   localStorage.setItem("colorTheme", colorTheme);
 }
 

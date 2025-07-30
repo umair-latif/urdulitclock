@@ -95,29 +95,22 @@ body.dark .highlighted { color: #f9f9f9; }
 .menu {
   font-family: 'Noto Naskh Arabic', serif;
   position: fixed;
-  bottom: 0;
+  top: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   transition: background 0.3s, color 0.3s;
   padding: 5px 10px;
 }
 body.dark .menu {
-  /* lighter glassy shade for dark mode menu */
   background: rgba(40, 40, 40, 0.6);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Top row: link + controls */
-.menu-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px;
-}
 
 /* Right-side menu items */
 .menu-right {
@@ -210,11 +203,22 @@ body.dark .menu button { background: rgba(255,255,255,0.1); }
 
 
 /* Footer text */
-.menu-text {
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   font-size: 0.9rem;
-  margin-top: 2px;
   opacity: 0.6;
+  padding: 3px 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+body.dark .footer {
+  background: rgba(40,40,40,0.6);
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 /* Force the body to fit within the viewport */
 html, body {
@@ -248,7 +252,7 @@ body {
 .clock {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 80px);
   width: 95%;
   max-width: 1200px;
   padding: 1vh 4vw;
@@ -304,13 +308,6 @@ body {
   overflow: hidden;
 }
 
-/* Menu stays fixed */
-.menu {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
 
 
 /* ✅ Mobile adjustments */
@@ -321,3 +318,4 @@ body {
   .menu-text { font-size: 0.6rem; margin-top: 1px; }
   .menu-link { font-size: 0.6rem; }
 }
+
