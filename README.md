@@ -10,7 +10,7 @@ Each quote is carefully matched to every quarter-hour of the day (96 time slots)
 This makes the project not just a clock, but a living anthology of Urdu literature.
 
 🌐 Live Demo
-Live Demo on Netlify 
+[ on Netlify ](https://inktime.netlify.app/)
 
 
 # 🕰️ Urdu Literary Clock
