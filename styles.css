@@ -216,11 +216,19 @@ body.dark .menu button.theme-toggle {
   border-color: #fff;
 }
 
+/* Menu links */
+.menu a {
+  color: inherit;
+  text-decoration: underline;
+}
+.menu a:visited {
+  color: inherit;
+}
+
 /* GitHub link minimal */
 .menu-link {
   font-weight: bold;
-  text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   opacity: 0.85;
   transition: opacity 0.3s;
 }
@@ -407,4 +415,5 @@ body {
   .menu select { font-size: 0.75rem; padding: 3px 6px; }
   .menu-right { gap: 5px; margin-right: 4px; }
   .menu-text { font-size: 0.6rem; margin-top: 1px; }
+  .menu-link { font-size: 0.6rem; }
 }
