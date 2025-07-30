@@ -163,10 +163,10 @@ function getSlot(minute) {
 
 // ---- QUOTE SEARCH WITH RANDOMIZATION ----
 function findQuote(hour, slot) {
-  let candidates = quotes.filter(q => q.hour === hour && q.slot === slot);
+  let candidates = quotes.filter(q => q.hour === hour && Math.floor(q.slot) === slot);
   while (candidates.length === 0 && slot > 0) {
     slot--;
-    candidates = quotes.filter(q => q.hour === hour && q.slot === slot);
+    candidates = quotes.filter(q => q.hour === hour && Math.floor(q.slot) === slot);
   }
   if (candidates.length === 0) {
     return fallbacks[Math.floor(Math.random() * fallbacks.length)] || 
