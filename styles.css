@@ -160,7 +160,7 @@ body.dark .menu select { background: rgba(255,255,255,0.1); }
 /* Footer text */
 .menu-text {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   margin-top: 2px;
   opacity: 0.6;
 }
@@ -230,8 +230,6 @@ body {
 }
 
 
-
-
 /* Time text scales dynamically */
 .time {
   font-size: clamp(1.2rem, 4.5vw, 3rem);
@@ -241,7 +239,7 @@ body {
 /* Urdu text adapts to space */
 .urdu {
   font-size: clamp(1.2rem, 4.5vw, 3rem);
-  line-height: 2.0;
+  line-height: 2.3;
   max-height: 60%;
   overflow: hidden;
 }

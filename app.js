@@ -243,6 +243,16 @@ timeSelect.addEventListener("change", (e) => {
   localStorage.setItem("timeFormat", timeFormat);
 });
 
+// Re-adjust font size dynamically when the window is resized
+window.addEventListener("resize", () => {
+  const quoteContainer = document.querySelector(".quote-container");
+  const metaDiv = document.querySelector(".meta-info");
+  const urduEl = document.getElementById("urdu-quote");
+  const romanEl = document.getElementById("roman-quote");
+
+  adjustFontSize(quoteContainer, urduEl, romanEl, metaDiv);
+});
+
 // ---- COLOR THEME DROPDOWN ----
 colorThemeSelect.addEventListener("change", (e) => {
   document.body.classList.remove(`theme-${colorTheme}`);
