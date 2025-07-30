@@ -104,6 +104,8 @@ let darkMode = localStorage.getItem("darkMode") === "true";
 let showRoman = localStorage.getItem("showRoman") === "true";
 let timeFormat = localStorage.getItem("timeFormat") || "24H";
 let colorTheme = localStorage.getItem("colorTheme") || "default"; // default black/white
+let lastQuoteBucket = -1;
+let lastQuoteHour = -1;
 
 // ---- ELEMENTS ----
 const timeEl = document.getElementById("time");
@@ -184,49 +186,49 @@ function highlightText(text, highlight) {
 }
 
 // ---- UPDATE CLOCK DISPLAY ----
-function updateClock() {
+function updateClock(forceQuote = false) {
   const now = getCurrentDate();
   const hour = now.getHours();
-  const slot = getSlot(now.getMinutes());
+  const minute = now.getMinutes();
+  const slot = getSlot(minute);
 
   timeEl.textContent = formatTime();
 
-  const quote = findQuote(hour, slot);
+  const bucket = Math.floor(minute / 5);
+  if (forceQuote || bucket !== lastQuoteBucket || hour !== lastQuoteHour) {
+    lastQuoteBucket = bucket;
+    lastQuoteHour = hour;
 
-  // Highlight fields
-  const urduHighlighted = highlightText(quote.urdu, quote.highlight).replace(/\(ل\)/g, "<br>");
-  const romanHighlighted = highlightText(quote.transliteration || "", quote.highlight).replace(/\(ل\)/g, "<br>");
+    const quote = findQuote(hour, slot);
 
-  // Render text
-  // Replace (ل) with <br> before splitting lines
+    const urduHighlighted = highlightText(quote.urdu, quote.highlight).replace(/\(ل\)/g, "<br>");
+    const romanHighlighted = highlightText(quote.transliteration || "", quote.highlight).replace(/\(ل\)/g, "<br>");
 
-	urduEl.innerHTML = urduHighlighted
-	  .split("\n")
-	  .map(line => `<p>${line}</p>`)
-	  .join("");
-  romanEl.innerHTML = showRoman ? romanHighlighted : "";
+    urduEl.innerHTML = urduHighlighted
+      .split("\n")
+      .map(line => `<p>${line}</p>`)
+      .join("");
+    romanEl.innerHTML = showRoman ? romanHighlighted : "";
 
-  // Metadata
-  let metaHTML = "";
-  if (showRoman) {
-    if (quote.source) metaHTML += `<div><em>${quote.source}</em></div>`;
-    if (quote.book) metaHTML += `<div><small>${quote.book}</small></div>`;
-  } else {
-    if (quote.source_urdu) metaHTML += `<div class="font-naskh">${quote.source_urdu}</div>`;
-    if (quote.book_urdu) metaHTML += `<div class="font-naskh"><small>${quote.book_urdu}</small></div>`;
+    let metaHTML = "";
+    if (showRoman) {
+      if (quote.source) metaHTML += `<div><em>${quote.source}</em></div>`;
+      if (quote.book) metaHTML += `<div><small>${quote.book}</small></div>`;
+    } else {
+      if (quote.source_urdu) metaHTML += `<div class="font-naskh">${quote.source_urdu}</div>`;
+      if (quote.book_urdu) metaHTML += `<div class="font-naskh"><small>${quote.book_urdu}</small></div>`;
+    }
+
+    const existingMeta = document.querySelector(".meta-info");
+    if (existingMeta) existingMeta.remove();
+    const metaDiv = document.createElement("div");
+    metaDiv.className = "meta-info";
+    metaDiv.innerHTML = metaHTML;
+    romanEl.insertAdjacentElement("afterend", metaDiv);
+
+    const quoteContainer = document.querySelector(".quote-container");
+    adjustFontSize(quoteContainer, urduEl, romanEl, metaDiv);
   }
-
-  const existingMeta = document.querySelector(".meta-info");
-  if (existingMeta) existingMeta.remove();
-  const metaDiv = document.createElement("div");
-  metaDiv.className = "meta-info";
-  metaDiv.innerHTML = metaHTML;
-  romanEl.insertAdjacentElement("afterend", metaDiv);
-  
-  // ✅ Adjust font size dynamically to fit screen
-	const quoteContainer = document.querySelector(".quote-container");
-//const metaDiv = document.querySelector(".meta-info");
-adjustFontSize(quoteContainer, urduEl, romanEl, metaDiv);
 }
 
 // ---- EVENT LISTENERS ----
@@ -241,14 +243,14 @@ romanBtn.onclick = () => {
   showRoman = !showRoman;
   localStorage.setItem("showRoman", showRoman);
   romanBtn.textContent = showRoman ? "Hide Roman" : "Show Roman";
-  updateClock(); // ✅ Refresh the quote rendering
+  updateClock(true); // ✅ Refresh the quote rendering
 };
 
 formatBtn.onclick = () => {
   timeFormat = timeFormat === "24H" ? "12H" : "24H";
   localStorage.setItem("timeFormat", timeFormat);
   formatBtn.textContent = timeFormat;
-  updateClock();
+  updateClock(true);
 };
 
 // Re-adjust font size dynamically when the window is resized
@@ -325,7 +327,7 @@ async function init() {
     console.warn("Error loading fallbacks.json, using defaults:", err);
   }
 
-  updateClock();
+  updateClock(true);
   setInterval(updateClock, 59_000);
 }
 
