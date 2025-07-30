@@ -113,7 +113,7 @@ const menuEl = document.getElementById("menu");
 const footerEl = document.getElementById("footer");
 const themeBtn = document.getElementById("toggle-theme");
 const romanBtn = document.getElementById("toggle-roman");
-const timeSelect = document.getElementById("time-format");
+const formatBtn = document.getElementById("toggle-format");
 const colorCircles = document.querySelectorAll(".color-circle");
 
 // ---- APPLY SAVED SETTINGS ----
@@ -126,7 +126,7 @@ footerEl.classList.toggle("dark", darkMode);
 themeBtn.textContent = darkMode ? "☀️" : "🌙";
 romanBtn.textContent = showRoman ? "Hide Roman Urdu" : "Show Roman Urdu";
 romanEl.style.display = showRoman ? "block" : "none";
-timeSelect.value = timeFormat;
+formatBtn.textContent = timeFormat;
 const selectedCircle = document.querySelector(`.color-circle[data-theme="${colorTheme}"]`);
 if (selectedCircle) selectedCircle.classList.add("selected");
 
@@ -244,10 +244,12 @@ romanBtn.onclick = () => {
   updateClock(); // ✅ Refresh the quote rendering
 };
 
-timeSelect.addEventListener("change", (e) => {
-  timeFormat = e.target.value;
+formatBtn.onclick = () => {
+  timeFormat = timeFormat === "24H" ? "12H" : "24H";
   localStorage.setItem("timeFormat", timeFormat);
-});
+  formatBtn.textContent = timeFormat;
+  updateClock();
+};
 
 // Re-adjust font size dynamically when the window is resized
 window.addEventListener("resize", () => {
