@@ -290,11 +290,23 @@ function adjustFontSize(quoteContainer, urduEl, romanEl, metaEl) {
 async function init() {
   try {
     quotes = await (await fetch("quotes.json")).json();
-    fallbacks = await (await fetch("fallbacks.json")).json();
   } catch (err) {
-    console.error("Error loading JSON:", err);
+    console.error("Error loading quotes:", err);
     urduEl.textContent = "Quotes could not be loaded.";
+    return; // can't continue without main quotes
   }
+
+  try {
+    const resp = await fetch("fallbacks.json");
+    if (resp.ok) {
+      fallbacks = await resp.json();
+    } else {
+      console.warn("fallbacks.json not found, using defaults");
+    }
+  } catch (err) {
+    console.warn("Error loading fallbacks.json, using defaults:", err);
+  }
+
   updateClock();
   setInterval(updateClock, 59_000);
 }
