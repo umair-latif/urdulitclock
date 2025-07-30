@@ -171,6 +171,51 @@ body.dark .menu button.theme-toggle {
   border-color: #fff;
 }
 
+/* Color theme circles */
+.color-options {
+  display: flex;
+  gap: 6px;
+}
+
+.color-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.color-circle:hover {
+  transform: scale(1.1);
+}
+.color-circle.theme-default { background: #000; }
+.color-circle.theme-blue { background: #4b6eff; }
+.color-circle.theme-maroon { background: #b03060; }
+.color-circle.theme-green { background: #1e8f5a; }
+.color-circle.selected {
+
+  border-color: #222; /* visible on light menu */
+}
+body.dark .color-circle.selected {
+  border-color: #fff; /* visible on dark menu */
+}
+
+/* Round button for dark/light toggle */
+.menu button.theme-toggle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #222;
+}
+body.dark .menu button.theme-toggle {
+  border-color: #fff;
+}
+
 /* GitHub link minimal */
 .menu-link {
   font-weight: bold;
