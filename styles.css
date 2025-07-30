@@ -190,9 +190,8 @@ body.dark .menu button.theme-toggle {
 }
 .menu-link:hover { opacity: 1; }
 
-/* Text-based buttons and dropdowns */
-.menu button,
-.menu select {
+/* Text-based buttons */
+.menu button {
   background: rgba(255,255,255,0.2);
   border: none;
   border-radius: 6px;
@@ -202,61 +201,11 @@ body.dark .menu button.theme-toggle {
   transition: background 0.3s, transform 0.2s;
   cursor: pointer;
 }
-body.dark .menu button,
-body.dark .menu select { background: rgba(255,255,255,0.1); }
+body.dark .menu button { background: rgba(255,255,255,0.1); }
 
-.menu button:hover,
-.menu select:hover {
+.menu button:hover {
   background: rgba(255,255,255,0.3);
   transform: scale(1.03);
-}
-/* === Default Theme Select === */
-body.theme-default .menu select {
-  background: rgba(255,255,255,0.9);
-  color: #222;
-}
-body.theme-default.dark .menu select {
-  background: rgba(20,20,20,0.9);
-  color: #f0f0f0;
-}
-
-/* === Blue Theme Select === */
-body.theme-blue .menu select {
-  background: rgba(230,235,255,0.9);
-  color: #1a1a3d;
-}
-body.theme-blue.dark .menu select {
-  background: rgba(35,35,80,0.9);
-  color: #e0e5ff;
-}
-
-/* === Maroon Theme Select === */
-body.theme-maroon .menu select {
-  background: rgba(255,230,240,0.9);
-  color: #4b1a2b;
-}
-body.theme-maroon.dark .menu select {
-  background: rgba(60,15,30,0.9);
-  color: #ffd8e4;
-}
-
-/* === Green Theme Select === */
-body.theme-green .menu select {
-  background: rgba(225,255,240,0.9);
-  color: #0e3f2e;
-}
-body.theme-green.dark .menu select {
-  background: rgba(15,40,25,0.9);
-  color: #ccffee;
-}
-
-/* Optional border & hover for consistency */
-.menu select {
-  border: 1px solid rgba(0,0,0,0.1);
-  transition: background 0.3s, color 0.3s;
-}
-body.dark .menu select {
-  border: 1px solid rgba(255,255,255,0.2);
 }
 
 
@@ -367,8 +316,7 @@ body {
 /* ✅ Mobile adjustments */
 @media (max-width: 600px) {
   .menu { padding: 4px 8px; }
-  .menu button,
-  .menu select { font-size: 0.75rem; padding: 3px 6px; }
+  .menu button { font-size: 0.75rem; padding: 3px 6px; }
   .menu-right { gap: 5px; margin-right: 4px; }
   .menu-text { font-size: 0.6rem; margin-top: 1px; }
   .menu-link { font-size: 0.6rem; }
